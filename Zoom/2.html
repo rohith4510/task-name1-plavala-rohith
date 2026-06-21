@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Vault Library System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-flex">
+            <h1 class="logo-title">Vault<span>Library</span></h1>
+            <nav class="nav-links">
+                <a href="#" class="active">Catalog Explorer</a>
+                <a href="#">Schema Overview</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-layout">
+        
+        <section class="form-card">
+            <h2>Add New Book Resource</h2>
+            <p class="section-desc">Design custom resource fields to feed into the persistence pipeline.</p>
+            
+            <form id="resourceForm" novalidate>
+                <div class="form-group">
+                    <label for="bookTitle">Book Title</label>
+                    <input type="text" id="bookTitle" placeholder="e.g., Relational Database Geometry" required>
+                    <small class="error-msg" id="titleError">Title is required.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="bookAuthor">Author Name</label>
+                    <input type="text" id="bookAuthor" placeholder="e.g., Alan Turing" required>
+                    <small class="error-msg" id="authorError">Author name is required.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="bookGenre">Resource Genre / Track</label>
+                    <select id="bookGenre">
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Database Integration">Database Integration</option>
+                        <option value="Cybersecurity Protocols">Cybersecurity Protocols</option>
+                        <option value="Full Stack Logic">Full Stack Logic</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Commit to Storage Vault</button>
+            </form>
+        </section>
+
+        <section class="display-card">
+            <div class="display-header">
+                <h2>Active Data Storage Records</h2>
+                <span class="badge" id="recordCounter">2 Records Found</span>
+            </div>
+            <p class="section-desc">Live runtime snapshot of permanent records managed via CRUD execution.</p>
+            
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID Reference</th>
+                            <th>Book Title</th>
+                            <th>Author</th>
+                            <th>Genre Track</th>
+                        </tr>
+                    </thead>
+                    <tbody id="catalogTableBody">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
